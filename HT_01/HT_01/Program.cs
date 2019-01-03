@@ -1,4 +1,4 @@
-﻿#define T07
+﻿#define T08
 using System;
 
 namespace HT_01
@@ -103,6 +103,7 @@ namespace HT_01
             #endregion
 
             #region T07
+#if (T07)
 
             string ageText = "Enter your age: ";
             int currentYear = 2019;
@@ -111,6 +112,23 @@ namespace HT_01
             Console.Write(ageText);
             age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Your birth year is {currentYear - age}");
+
+#endif
+            #endregion
+
+            #region T08
+
+            int firstNumber;
+            int secongNumber;
+            int sum;
+
+            Console.WriteLine("Calculate sum of two number");
+            Console.Write("Enter first number: ");
+            firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter second number: ");
+            secongNumber = Convert.ToInt32(Console.ReadLine());
+            sum = firstNumber + secongNumber;
+            Console.WriteLine($"{firstNumber} + {secongNumber} = {sum}");
 
             #endregion
 
