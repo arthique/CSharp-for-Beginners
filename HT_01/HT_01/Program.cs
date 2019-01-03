@@ -1,4 +1,4 @@
-﻿#define T03
+﻿#define T04
 using System;
 
 namespace HT_01
@@ -8,7 +8,7 @@ namespace HT_01
         static void Main(string[] args)
         {
             #region T01
-            #if (T01)
+#if (T01)
 
             string firstName;
             string lastName;
@@ -19,11 +19,11 @@ namespace HT_01
             lastName = Console.ReadLine();
             Console.WriteLine($"Welcome {firstName} {lastName}");
 
-            #endif
+#endif
             #endregion
 
             #region T02
-            #if (T02)
+#if (T02)
 
             string name;
             int age;
@@ -34,10 +34,11 @@ namespace HT_01
             age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"{name} is {age} years old");
 
-            #endif
+#endif
             #endregion
 
             #region T03
+#if (T03)
 
             string currentDayName;
             string currentMonthName;
@@ -50,6 +51,20 @@ namespace HT_01
             Console.Write("Enter current day number: ");
             currentDayDate = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Today is {currentDayName} {currentDayDate} {currentMonthName}");
+
+#endif
+            #endregion
+
+            #region T04
+
+            string monthName;
+            int numberDayMonth;
+
+            Console.Write("Enter month name: ");
+            monthName = Console.ReadLine();
+            Console.Write("Enter number days in month: ");
+            numberDayMonth = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"{monthName} has {numberDayMonth} days");
 
             #endregion
 
