@@ -1,4 +1,4 @@
-﻿#define T06
+﻿#define T07
 using System;
 
 namespace HT_01
@@ -85,6 +85,7 @@ namespace HT_01
             #endregion
 
             #region T06
+#if (T06)
 
             string nameText = "Enter your name: ";
             string birthYearText = "Enter your birth year: ";
@@ -97,6 +98,19 @@ namespace HT_01
             Console.Write(birthYearText);
             birthYear = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"{name} is {currentYear - birthYear} years old.");
+
+#endif
+            #endregion
+
+            #region T07
+
+            string ageText = "Enter your age: ";
+            int currentYear = 2019;
+            int age;
+
+            Console.Write(ageText);
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Your birth year is {currentYear - age}");
 
             #endregion
 
