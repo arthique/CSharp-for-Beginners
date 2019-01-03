@@ -1,4 +1,4 @@
-﻿#define T02
+﻿#define T03
 using System;
 
 namespace HT_02
@@ -34,7 +34,24 @@ namespace HT_02
             number = Convert.ToInt32(Console.ReadLine());
             isDividedByFiveWithReminderTwo = number % 5 == 2;
             isDividedBySevenWithReminderOne = number % 7 == 1;
-            Console.WriteLine($"A number {number} is {(isDividedByFiveWithReminderTwo && isDividedBySevenWithReminderOne ? "" : "not ")}meets the conditions");
+            Console.WriteLine($"A number {number} {(isDividedByFiveWithReminderTwo && isDividedBySevenWithReminderOne ? "" : "not ")}meets the conditions");
+
+#endif
+            #endregion
+
+            #region T03
+#if (T03)
+
+            const string numberText = "Enter number: ";
+            int number;
+            bool isDividedByFour;
+            bool isLessTen;
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            isDividedByFour = number % 4 == 0;
+            isLessTen = number < 10;
+            Console.WriteLine($"The number {number} {(isDividedByFour && isLessTen ? "" : "not ")}meets the conditions");
 
 #endif
             #endregion
