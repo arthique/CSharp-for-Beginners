@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define T01
+using System;
 
 namespace HT_01
 {
@@ -6,7 +7,8 @@ namespace HT_01
     {
         static void Main(string[] args)
         {
-            #region
+            #region T01
+            #if (T01)
 
             string firstName;
             string lastName;
@@ -17,6 +19,7 @@ namespace HT_01
             lastName = Console.ReadLine();
             Console.WriteLine($"Welcome {firstName} {lastName}");
 
+            #endif
             #endregion
         }
     }
