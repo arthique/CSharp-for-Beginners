@@ -1,4 +1,4 @@
-﻿#define T04
+﻿#define T05
 using System;
 
 namespace HT_01
@@ -56,6 +56,7 @@ namespace HT_01
             #endregion
 
             #region T04
+#if (T04)
 
             string monthName;
             int numberDayMonth;
@@ -65,6 +66,27 @@ namespace HT_01
             Console.Write("Enter number days in month: ");
             numberDayMonth = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"{monthName} has {numberDayMonth} days");
+
+#endif
+            #endregion
+
+            #region T05
+#if (T05)
+
+            string birthYearText = "Enter your birth year: ";
+            int currentYear = 2019;
+            int birthYear;
+
+            Console.Write(birthYearText);
+            birthYear = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Your age is {currentYear - birthYear}");
+
+#endif
+            #endregion
+
+            #region T06
+
+
 
             #endregion
 
