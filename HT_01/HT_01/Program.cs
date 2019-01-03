@@ -1,4 +1,4 @@
-﻿#define T09
+﻿#define T10
 using System;
 
 namespace HT_01
@@ -135,6 +135,7 @@ namespace HT_01
             #endregion
 
             #region T09
+#if (T09)
 
             int number;
 
@@ -142,6 +143,27 @@ namespace HT_01
             number = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"{number - 1} < {number} < {number + 1}");
 
+#endif
+            #endregion
+
+            #region T10
+#if (T10)
+
+            int firstNumber;
+            int secondNumber;
+            int sum;
+            int diff;
+
+            Console.Write("Enter first number: ");
+            firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter second number: ");
+            secondNumber = Convert.ToInt32(Console.ReadLine());
+            sum = firstNumber + secondNumber;
+            diff = firstNumber - secondNumber;
+            Console.WriteLine($"{firstNumber} + {secondNumber} = {sum}");
+            Console.WriteLine($"{firstNumber} - {secondNumber} = {diff}");
+
+#endif
             #endregion
 
         }
