@@ -1,4 +1,4 @@
-﻿#define T08
+﻿#define T09
 using System;
 
 namespace HT_01
@@ -117,6 +117,7 @@ namespace HT_01
             #endregion
 
             #region T08
+#if (T08)
 
             int firstNumber;
             int secongNumber;
@@ -129,6 +130,17 @@ namespace HT_01
             secongNumber = Convert.ToInt32(Console.ReadLine());
             sum = firstNumber + secongNumber;
             Console.WriteLine($"{firstNumber} + {secongNumber} = {sum}");
+
+#endif
+            #endregion
+
+            #region T09
+
+            int number;
+
+            Console.Write("Enter number: ");
+            number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"{number - 1} < {number} < {number + 1}");
 
             #endregion
 
