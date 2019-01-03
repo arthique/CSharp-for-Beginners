@@ -6,7 +6,18 @@ namespace HT_01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            #region
+
+            string firstName;
+            string lastName;
+
+            Console.Write("Enter your first name: ");
+            firstName = Console.ReadLine();
+            Console.Write("Enter your last name: ");
+            lastName = Console.ReadLine();
+            Console.WriteLine($"Welcome {firstName} {lastName}");
+
+            #endregion
         }
     }
 }
