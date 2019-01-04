@@ -1,4 +1,4 @@
-﻿#define T06
+﻿#define T07
 using System;
 
 namespace HT_02
@@ -100,6 +100,24 @@ namespace HT_02
             base8number = Convert.ToString(number, base8);
             secondPosition = Convert.ToInt32(base8number) / 10 % 10;
             Console.WriteLine($"The number has {secondPosition} in the second position");
+
+#endif
+            #endregion
+
+            #region T07
+#if (T07)
+
+            const string numberText = "Enter number: ";
+            const int base2 = 2;
+            int number;
+            string base2number;
+            int thirdPosition;
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            thirdPosition = number >> 2;
+            base2number = Convert.ToString(thirdPosition, base2);
+            Console.WriteLine($"The number third byte is {base2number.Substring(base2number.Length - 1)}"); // TODO come up with another solution
 
 #endif
             #endregion
