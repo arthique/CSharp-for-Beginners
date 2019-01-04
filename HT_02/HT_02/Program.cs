@@ -1,4 +1,4 @@
-﻿#define T03
+﻿#define T04
 using System;
 
 namespace HT_02
@@ -52,6 +52,21 @@ namespace HT_02
             isDividedByFour = number % 4 == 0;
             isLessTen = number < 10;
             Console.WriteLine($"The number {number} {(isDividedByFour && isLessTen ? "" : "not ")}meets the conditions");
+
+#endif
+            #endregion
+
+            #region T04
+#if (T04)
+
+            const string numberText = "Enter number: ";
+            int number;
+            bool isInRangeFromFiveToTen;
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            isInRangeFromFiveToTen = number > 4 && number <= 10;
+            Console.WriteLine($"The number {number} {(isInRangeFromFiveToTen ? "" : "not ")}meets the conditions");
 
 #endif
             #endregion
