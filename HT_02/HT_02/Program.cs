@@ -1,4 +1,4 @@
-﻿#define T09
+﻿#define T10
 using System;
 
 namespace HT_02
@@ -147,6 +147,20 @@ namespace HT_02
             number = Convert.ToInt32(Console.ReadLine());
             result = (number >> 3) % 2 != 0 ? number ^ binary : number;
             Console.WriteLine($"The binary XOR {result}");
+
+#endif
+            #endregion
+
+            #region T10
+#if (T10)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int binary = Convert.ToInt32("10", 2);
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The binary second position XOR {((number >> 1) % 2 == 0 ? number | binary : number ^ binary)}");
 
 #endif
             #endregion
