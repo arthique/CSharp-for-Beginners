@@ -1,4 +1,4 @@
-﻿#define T05
+﻿#define T06
 using System;
 
 namespace HT_02
@@ -82,6 +82,24 @@ namespace HT_02
             number = Convert.ToInt32(Console.ReadLine());
             thousants = number / 1000 % 10;
             Console.WriteLine($"The number has {thousants} thousands");
+
+#endif
+            #endregion
+
+            #region T06
+#if (T06)
+
+            const string numberText = "Enter number: ";
+            const int base8 = 8;
+            int number;
+            string base8number;
+            int secondPosition;
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            base8number = Convert.ToString(number, base8);
+            secondPosition = Convert.ToInt32(base8number) / 10 % 10;
+            Console.WriteLine($"The number has {secondPosition} in the second position");
 
 #endif
             #endregion
