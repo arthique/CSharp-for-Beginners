@@ -1,4 +1,4 @@
-﻿#define T08
+﻿#define T09
 using System;
 
 namespace HT_02
@@ -132,6 +132,22 @@ namespace HT_02
             Console.Write(numberText);
             number = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"The binary multiply {number | binary}");
+
+#endif
+            #endregion
+
+            #region T09
+#if (T09)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int binary = Convert.ToInt32("1000", 2);
+            int result;
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            result = (number >> 3) % 2 != 0 ? number ^ binary : number;
+            Console.WriteLine($"The binary XOR {result}");
 
 #endif
             #endregion
