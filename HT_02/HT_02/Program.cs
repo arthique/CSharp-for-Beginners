@@ -1,4 +1,4 @@
-﻿#define T07
+﻿#define T08
 using System;
 
 namespace HT_02
@@ -118,6 +118,20 @@ namespace HT_02
             thirdPosition = number >> 2;
             base2number = Convert.ToString(thirdPosition, base2);
             Console.WriteLine($"The number third byte is {base2number.Substring(base2number.Length - 1)}"); // TODO come up with another solution
+
+#endif
+            #endregion
+
+            #region T08
+#if (T08)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int binary = Convert.ToInt32("100", 2);
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The binary multiply {number | binary}");
 
 #endif
             #endregion
