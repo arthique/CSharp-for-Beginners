@@ -1,4 +1,4 @@
-﻿#define T04
+﻿#define T05
 using System;
 
 namespace HT_02
@@ -67,6 +67,21 @@ namespace HT_02
             number = Convert.ToInt32(Console.ReadLine());
             isInRangeFromFiveToTen = number > 4 && number <= 10;
             Console.WriteLine($"The number {number} {(isInRangeFromFiveToTen ? "" : "not ")}meets the conditions");
+
+#endif
+            #endregion
+
+            #region T05
+#if (T05)
+
+            const string numberText = "Enter number: ";
+            int number;
+            int thousants;
+
+            Console.Write(numberText);
+            number = Convert.ToInt32(Console.ReadLine());
+            thousants = number / 1000 % 10;
+            Console.WriteLine($"The number has {thousants} thousands");
 
 #endif
             #endregion
