@@ -115,9 +115,8 @@ namespace HT_02
 
             Console.Write(numberText);
             number = Convert.ToInt32(Console.ReadLine());
-            thirdPosition = number >> 2;
-            base2number = Convert.ToString(thirdPosition, base2);
-            Console.WriteLine($"The number third byte is {base2number.Substring(base2number.Length - 1)}"); // TODO come up with another solution
+            thirdPosition = (number >> 2) % 2 == 0 ? 0 : 1;
+            Console.WriteLine($"The number third byte is {thirdPosition}");
 
 #endif
             #endregion
