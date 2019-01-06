@@ -1,4 +1,4 @@
-﻿#define T05
+﻿#define T05B
 using System;
 
 namespace HT_03
@@ -137,8 +137,8 @@ namespace HT_03
 #endif
             #endregion
 
-            #region T05
-#if (T05)
+            #region T05A
+#if (T05A)
 
             string dayName;
             int dayNumber = 0;
@@ -177,6 +177,51 @@ namespace HT_03
             {
                 Console.WriteLine("Entered incorrect day name");
             }
+
+#endif
+            #endregion
+
+            #region T05B
+#if (T05B)
+
+            string dayName;
+            string output;
+
+            Console.Write("Enter a day name: ");
+            dayName = Console.ReadLine();
+            if (dayName == "sunday")
+            {
+                output = "Entered first day of week";
+            }
+            else if (dayName == "monday")
+            {
+                output = "Entered second day of week";
+            }
+            else if (dayName == "tuesday")
+            {
+                output = "Entered third day of week";
+            }
+            else if (dayName == "wednesday")
+            {
+                output = "Entered fourth day of week";
+            }
+            else if (dayName == "thursday")
+            {
+                output = "Entered fifth day of week";
+            }
+            else if (dayName == "friday")
+            {
+                output = "Entered sixth day of week";
+            }
+            else if (dayName == "saturday")
+            {
+                output = "Entered seventh day of week";
+            }
+            else
+            {
+                output = "Entered incorrect day name";
+            }
+            Console.WriteLine(output);
 
 #endif
             #endregion
