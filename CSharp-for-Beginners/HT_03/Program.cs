@@ -1,4 +1,4 @@
-﻿#define T04
+﻿#define T05
 using System;
 
 namespace HT_03
@@ -132,6 +132,50 @@ namespace HT_03
             catch
             {
                 Console.WriteLine("Entered value is not a number!");
+            }
+
+#endif
+            #endregion
+
+            #region T05
+#if (T05)
+
+            string dayName;
+            int dayNumber = 0;
+
+            Console.Write("Enter a day name: ");
+            dayName = Console.ReadLine();
+            switch (dayName.ToLower())
+            {
+                case "sunday":
+                    dayNumber = 1;
+                    break;
+                case "monday":
+                    dayNumber = 2;
+                    break;
+                case "tuesday":
+                    dayNumber = 3;
+                    break;
+                case "wednesday":
+                    dayNumber = 4;
+                    break;
+                case "thursday":
+                    dayNumber = 5;
+                    break;
+                case "friday":
+                    dayNumber = 6;
+                    break;
+                case "sarutday":
+                    dayNumber = 7;
+                    break;
+            }
+            if (dayNumber > 0 && dayNumber <= 7)
+            {
+                Console.WriteLine($"Entered {dayNumber} day in the week");
+            }
+            else
+            {
+                Console.WriteLine("Entered incorrect day name");
             }
 
 #endif
