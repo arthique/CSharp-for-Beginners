@@ -1,4 +1,4 @@
-﻿#define T03
+﻿#define T04
 using System;
 
 namespace HT_03
@@ -88,6 +88,51 @@ namespace HT_03
             }
             while (number > 0);
             Console.WriteLine($"Sum = {sum}");
+
+#endif
+            #endregion
+
+            #region T04
+#if (T04)
+
+            int number;
+
+            Console.Write("Enter a number: ");
+            try
+            {
+                number = Int32.Parse(Console.ReadLine());
+                switch (number)
+                {
+                    case 1:
+                        Console.WriteLine("Sunday");
+                        break;
+                    case 2:
+                        Console.WriteLine("Monday");
+                        break;
+                    case 3:
+                        Console.WriteLine("Tuesday");
+                        break;
+                    case 4:
+                        Console.WriteLine("Wednesday");
+                        break;
+                    case 5:
+                        Console.WriteLine("Thursday");
+                        break;
+                    case 6:
+                        Console.WriteLine("Friday");
+                        break;
+                    case 7:
+                        Console.WriteLine("Saturday");
+                        break;
+                    default:
+                        Console.WriteLine("Entered number must be in range from 1 to 7");
+                        break;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number!");
+            }
 
 #endif
             #endregion
