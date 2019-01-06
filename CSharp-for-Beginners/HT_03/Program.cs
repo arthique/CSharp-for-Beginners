@@ -1,4 +1,4 @@
-﻿#define T08B
+﻿#define T09B
 using System;
 
 namespace HT_03
@@ -459,6 +459,87 @@ namespace HT_03
             catch
             {
                 Console.WriteLine("Entered incorrect number");
+            }
+#endif
+            #endregion
+
+            #region T09A
+#if (T09A)
+            const string numberText = "Enter a number: ";
+            int firstNumber;
+            int secondNumber;
+            string output = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                firstNumber = Int32.Parse(Console.ReadLine());
+                Console.Write(numberText);
+                secondNumber = Int32.Parse(Console.ReadLine());
+
+                if (firstNumber == secondNumber)
+                {
+                    output = $"{firstNumber}";
+                }
+                else if (firstNumber > secondNumber)
+                {
+                    while (secondNumber <= firstNumber)
+                    {
+                        output += $"{secondNumber} ";
+                        secondNumber += 1;
+                    }
+                }
+                else
+                {
+                    while (firstNumber <= secondNumber)
+                    {
+                        output += $"{firstNumber} ";
+                        firstNumber += 1;
+                    }
+                }
+                Console.WriteLine(output);
+
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
+            }
+#endif
+            #endregion
+
+            #region T09B
+#if (T09B)
+            const string numberText = "Enter a number: ";
+            int firstNumber;
+            int secondNumber;
+            string output = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                firstNumber = Int32.Parse(Console.ReadLine());
+                Console.Write(numberText);
+                secondNumber = Int32.Parse(Console.ReadLine());
+
+                if (firstNumber == secondNumber)
+                {
+                    output = $"{firstNumber}";
+                }
+                else
+                {
+                    int min = firstNumber > secondNumber ? secondNumber : firstNumber;
+                    int max = firstNumber > secondNumber ? firstNumber : secondNumber;
+                    for (; min <= max; min++)
+                    {
+                        output += $"{min} ";
+                    }
+                }
+                Console.WriteLine(output);
+
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
             }
 #endif
             #endregion
