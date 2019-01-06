@@ -1,4 +1,4 @@
-﻿#define T06B
+﻿#define T07B
 using System;
 
 namespace HT_03
@@ -293,6 +293,77 @@ namespace HT_03
                 else
                 {
                     Console.WriteLine("Entered number less 1");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered incorrect number");
+            }
+
+#endif
+            #endregion
+
+            #region T07A
+#if (T07A)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int sumOfNumberSquares = 0;
+            string numberSquares = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+
+                if (number >= 0)
+                {
+                    while (number >= 0)
+                    {
+                        numberSquares += number > 0 ? $"{number}^2 + " : $"{number}^2";
+                        sumOfNumberSquares += number * number;
+                        number -= 1;
+                    }
+                    Console.WriteLine($"{numberSquares} = {sumOfNumberSquares}");
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 0");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered incorrect number");
+            }
+
+#endif
+            #endregion
+
+            #region T07B
+#if (T07B)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int sumOfNumberSquares = 0;
+            string numberSquares = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+
+                if (number >= 0)
+                {
+                    for (; number >= 0; number--)
+                    {
+                        numberSquares += number > 0 ? $"{number}^2 + " : $"{number}^2";
+                        sumOfNumberSquares += number * number;
+                    }
+                    Console.WriteLine($"{numberSquares} = {sumOfNumberSquares}");
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 0");
                 }
             }
             catch
