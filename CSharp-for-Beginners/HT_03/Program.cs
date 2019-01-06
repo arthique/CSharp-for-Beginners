@@ -1,4 +1,4 @@
-﻿#define T05B
+﻿#define T06B
 using System;
 
 namespace HT_03
@@ -222,6 +222,83 @@ namespace HT_03
                 output = "Entered incorrect day name";
             }
             Console.WriteLine(output);
+
+#endif
+            #endregion
+
+            #region T06A
+#if (T06A)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int oddSum = 0;
+            string oddNumbers = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+
+                if (number > 0)
+                {
+                    while (number > 0)
+                    {
+                        if (number % 2 != 0)
+                        {
+                            oddNumbers += number > 1 ? $"{number} + " : $"{number}";
+                            oddSum += number;
+                        }
+                        number -= 1;
+                    }
+                    Console.WriteLine($"{oddNumbers} = {oddSum}");
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 1");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered incorrect number");
+            }
+
+#endif
+            #endregion
+
+            #region T06B
+#if (T06B)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int oddSum = 0;
+            string oddNumbers = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+
+                if (number > 0)
+                {
+                    for (; number > 0; number--)
+                    {
+                        if (number % 2 != 0)
+                        {
+                            oddNumbers += number > 1 ? $"{number} + " : $"{number}";
+                            oddSum += number;
+                        }
+                    }
+                    Console.WriteLine($"{oddNumbers} = {oddSum}");
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 1");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered incorrect number");
+            }
 
 #endif
             #endregion
