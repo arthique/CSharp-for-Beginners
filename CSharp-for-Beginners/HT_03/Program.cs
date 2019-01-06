@@ -1,4 +1,4 @@
-﻿#define T01
+﻿#define T02
 using System;
 
 namespace HT_03
@@ -32,6 +32,38 @@ namespace HT_03
             }
 
 
+#endif
+            #endregion
+
+            #region T02
+#if (T02)
+
+            int firstNumber;
+            int secondNumber;
+
+            try
+            {
+                Console.Write("Enter first number: ");
+                firstNumber = Int32.Parse(Console.ReadLine());
+                Console.Write("Enter second number: ");
+                secondNumber = Int32.Parse(Console.ReadLine());
+                if (firstNumber == secondNumber)
+                {
+                    Console.WriteLine("The numbers is equals");
+                }
+                else if (firstNumber > secondNumber)
+                {
+                    Console.WriteLine("First number greater second number");
+                }
+                else
+                {
+                    Console.WriteLine("First number less second number");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
+            }
 #endif
             #endregion
         }
