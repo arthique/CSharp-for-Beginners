@@ -1,4 +1,4 @@
-﻿#define T07B
+﻿#define T08B
 using System;
 
 namespace HT_03
@@ -371,6 +371,95 @@ namespace HT_03
                 Console.WriteLine("Entered incorrect number");
             }
 
+#endif
+            #endregion
+
+            #region T08A
+#if (T08A)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int i;
+            int sum = 0;
+            int prev;
+            string fibNumbers = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+                if (number > 0)
+                {
+                    i = prev = 1;
+                    while (i <= number)
+                    {
+                        if (i == 1)
+                        {
+                            fibNumbers = $"{i}";
+                            sum = i;
+                        }
+                        else
+                        {
+                            fibNumbers = $"{fibNumbers} + {sum}";
+                            sum += prev;
+                            prev = sum - prev;
+                        }
+                        i += 1;
+                    }
+                    Console.WriteLine($"{fibNumbers}");
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 0");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered incorrect number");
+            }
+#endif
+            #endregion
+
+            #region T08B
+#if (T08B)
+
+            const string numberText = "Enter a number: ";
+            int number;
+            int sum = 0;
+            int prev;
+            string fibNumbers = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+                if (number > 0)
+                {
+                    for (int i = prev = 1; i <= number; i++)
+                    {
+                        if (i == 1)
+                        {
+                            fibNumbers = $"{i}";
+                            sum = i;
+                        }
+                        else
+                        {
+                            fibNumbers += $" + {sum}";
+                            sum += prev;
+                            prev = sum - prev;
+                        }
+                    }
+                    Console.WriteLine($"{fibNumbers}");
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 0");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered incorrect number");
+            }
 #endif
             #endregion
         }
