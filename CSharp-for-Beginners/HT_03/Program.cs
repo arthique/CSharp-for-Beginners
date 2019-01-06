@@ -1,4 +1,4 @@
-﻿#define T09B
+﻿#define T10B
 using System;
 
 namespace HT_03
@@ -540,6 +540,84 @@ namespace HT_03
             catch
             {
                 Console.WriteLine("Entered value is not a number");
+            }
+#endif
+            #endregion
+
+            #region T10A
+#if (T10A)
+            const string numberText = "Enter a number: ";
+            int number;
+            int sum = 0;
+            string numbers = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+
+                if (number > 0)
+                {
+                    int i = 0;
+                    while (number > 0)
+                    {
+                        if ((i / 5 > 0 && i % 5 == 2) || (i / 3 > 0 && i % 3 == 1))
+                        {
+                            numbers += sum > 0 ? $" + {i}" : $"{i}";
+                            sum += i;
+                            number--;
+                        }
+                        i++;
+                    }
+                    Console.WriteLine($"{numbers} = {sum}");
+
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 1");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number!");
+            }
+#endif
+            #endregion
+
+            #region T10B
+#if (T10B)
+            const string numberText = "Enter a number: ";
+            int number;
+            int sum = 0;
+            string numbers = String.Empty;
+
+            try
+            {
+                Console.Write(numberText);
+                number = Int32.Parse(Console.ReadLine());
+
+                if (number > 0)
+                {
+                    for (int i = 0; number > 0; i++)
+                    {
+                        if ((i / 5 > 0 && i % 5 == 2) || (i / 3 > 0 && i % 3 == 1))
+                        {
+                            numbers += sum > 0 ? $" + {i}" : $"{i}";
+                            sum += i;
+                            number--;
+                        }
+                    }
+                    Console.WriteLine($"{numbers} = {sum}");
+
+                }
+                else
+                {
+                    Console.WriteLine("Entered number less 1");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number!");
             }
 #endif
             #endregion
