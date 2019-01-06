@@ -1,4 +1,4 @@
-﻿#define T02
+﻿#define T03
 using System;
 
 namespace HT_03
@@ -64,6 +64,31 @@ namespace HT_03
             {
                 Console.WriteLine("Entered value is not a number");
             }
+#endif
+            #endregion
+
+            #region T03
+#if (T03)
+
+            int number;
+            int sum = 0;
+            do
+            {
+                try
+                {
+                    Console.Write("Enter a number: ");
+                    number = Int32.Parse(Console.ReadLine());
+                    sum += number;
+                }
+                catch
+                {
+                    Console.WriteLine("Entered value is not a number");
+                    break;
+                }
+            }
+            while (number > 0);
+            Console.WriteLine($"Sum = {sum}");
+
 #endif
             #endregion
         }
