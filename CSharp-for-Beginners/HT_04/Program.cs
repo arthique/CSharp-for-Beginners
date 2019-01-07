@@ -1,4 +1,4 @@
-﻿#define T01
+﻿#define T02
 using System;
 
 namespace HT_04
@@ -37,6 +37,34 @@ namespace HT_04
 
 #endif
             #endregion
+
+            #region T02
+#if (T02)
+
+            const string sizeText = "Enter array size: ";
+            int arraySize;
+            double[] numberArray;
+            int value = 2;
+
+            try
+            {
+                Console.Write(sizeText);
+                arraySize = Int32.Parse(Console.ReadLine());
+                numberArray = new double[arraySize];
+                for (int i = 0; i < arraySize; i++)
+                {
+                    numberArray[i] = Math.Pow(value, i);
+                    Console.WriteLine("{0}^{1} = {2:N0}", value, i, numberArray[i]);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number!");
+            }
+
+#endif
+            #endregion
+
         }
     }
 }
