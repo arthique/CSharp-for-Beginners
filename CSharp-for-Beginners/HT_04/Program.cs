@@ -1,4 +1,4 @@
-﻿#define T02
+﻿#define T03
 using System;
 
 namespace HT_04
@@ -74,6 +74,40 @@ namespace HT_04
 #endif
             #endregion
 
+            #region T03
+#if (T03)
+
+            const string sizeText = "Enter array size: ";
+            int arraySize;
+            char[] symbs;
+            char firstElement = 'a';
+
+            try
+            {
+                Console.Write(sizeText);
+                arraySize = Int32.Parse(Console.ReadLine());
+                symbs = new char[arraySize];
+                for (int i = 0; i < arraySize; i++)
+                {
+                    symbs[i] = (char)(firstElement + (i * 2));
+                }
+                for (int i = 0, size = symbs.Length; i < size; i++)
+                {
+                    Console.Write($"{symbs[i]} ");
+                }
+                Console.WriteLine();
+                for (int i = symbs.Length - 1; i >= 0; i--)
+                {
+                    Console.Write($"{symbs[i]} ");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number!");
+            }
+
+#endif
+            #endregion
         }
     }
 }
