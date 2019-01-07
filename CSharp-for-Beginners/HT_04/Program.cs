@@ -1,4 +1,4 @@
-﻿#define T03
+﻿#define T04
 using System;
 
 namespace HT_04
@@ -104,6 +104,32 @@ namespace HT_04
             catch
             {
                 Console.WriteLine("Entered value is not a number!");
+            }
+
+#endif
+            #endregion
+
+            #region T04
+#if (T04)
+
+            int arraySize = 10;
+            char[] symbs = new char[arraySize];
+            char symb = 'A';
+
+            for (int i = 0; i < arraySize; i++)
+            {
+                symb = (char)(symb + 1);
+            MYSYMB:
+                if (symb == 'A' || symb == 'E' || symb == 'I')
+                {
+                    symb = (char)(symb + 1);
+                    goto MYSYMB;
+                }
+                symbs[i] = symb;
+            }
+            foreach (char s in symbs)
+            {
+                Console.Write($"{s} ");
             }
 
 #endif
