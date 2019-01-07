@@ -51,9 +51,18 @@ namespace HT_04
                 Console.Write(sizeText);
                 arraySize = Int32.Parse(Console.ReadLine());
                 numberArray = new double[arraySize];
+
                 for (int i = 0; i < arraySize; i++)
                 {
                     numberArray[i] = Math.Pow(value, i);
+                }
+                for (int i = 0, size = numberArray.Length; i < size; i++)
+                {
+                    Console.WriteLine("{0}^{1} = {2:N0}", value, i, numberArray[i]);
+                }
+                Console.WriteLine();
+                for (int i = numberArray.Length - 1; i >= 0; i--)
+                {
                     Console.WriteLine("{0}^{1} = {2:N0}", value, i, numberArray[i]);
                 }
             }
