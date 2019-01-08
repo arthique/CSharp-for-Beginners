@@ -1,4 +1,4 @@
-﻿#define T06
+﻿#define T07
 using System;
 
 namespace HT_04
@@ -202,6 +202,39 @@ namespace HT_04
             for (int i = 0; i < arraySize; i++)
             {
                 Console.Write($"{numbers[i]} ");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+
+#endif
+            #endregion
+
+            #region T07
+#if (T07)
+
+            char[] symbols = new char[11];
+            char tmp;
+            Random rnd = new Random();
+
+            for (int i = 0, size = symbols.Length; i < size; i++)
+            {
+                symbols[i] = (char)('A' + rnd.Next(0, 25));
+            }
+            Console.WriteLine("Original array:");
+            foreach (char symbol in symbols)
+            {
+                Console.Write($"{symbol} ");
+            }
+            for (int i = 0, size = symbols.Length; i < size / 2; i++)
+            {
+                tmp = symbols[size - (1 + i)];
+                symbols[size - (1 + i)] = symbols[i];
+                symbols[i] = tmp;
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n\nReverse array:");
+            foreach (char symbol in symbols)
+            {
+                Console.Write($"{symbol} ");
             }
             Console.ForegroundColor = ConsoleColor.White;
 
