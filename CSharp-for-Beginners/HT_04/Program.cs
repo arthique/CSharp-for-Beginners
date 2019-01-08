@@ -1,4 +1,4 @@
-﻿#define T04
+﻿#define T06
 using System;
 
 namespace HT_04
@@ -131,6 +131,79 @@ namespace HT_04
             {
                 Console.Write($"{s} ");
             }
+
+#endif
+            #endregion
+
+            #region T05
+#if (T05)
+
+            int arraySize = 20;
+            int[] numbers = new int[arraySize];
+            int minNumber;
+            string indexes = String.Empty;
+            Random rnd = new Random();
+
+            for (int i = 0; i < arraySize; i++)
+            {
+                numbers[i] = rnd.Next(1, 10);
+                Console.Write($"{numbers[i]} ");
+            }
+
+            minNumber = numbers[0];
+            foreach (int num in numbers)
+            {
+                if (minNumber > num)
+                {
+                    minNumber = num;
+                }
+            }
+            Console.Write($"\nMin number = {minNumber} in the indexes ");
+            for (int i = 0; i < arraySize; i++)
+            {
+                if (numbers[i] == minNumber)
+                {
+                    indexes += indexes == String.Empty ? $"{i}" : $", {i}";
+                }
+            }
+            Console.Write($"{indexes}");
+
+#endif
+            #endregion
+
+            #region T06
+#if (T06)
+
+            int arraySize = 20;
+            int[] numbers = new int[arraySize];
+            Random rnd = new Random();
+
+            Console.WriteLine("Created array");
+            for (int i = 0; i < arraySize; i++)
+            {
+                numbers[i] = rnd.Next(1, 100);
+                Console.Write($"{numbers[i]} ");
+            }
+            for (int i = 1, s; i < arraySize; i++)
+            {
+                for (int j = 0; j < arraySize - 1; j++)
+                {
+                    if (numbers[j] < numbers[j + 1])
+                    {
+                        s = numbers[j + 1];
+                        numbers[j + 1] = numbers[j];
+                        numbers[j] = s;
+
+                    }
+                }
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n\nSorted array");
+            for (int i = 0; i < arraySize; i++)
+            {
+                Console.Write($"{numbers[i]} ");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
 
 #endif
             #endregion
