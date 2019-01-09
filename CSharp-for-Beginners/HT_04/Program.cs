@@ -1,4 +1,4 @@
-﻿#define T07
+﻿#define T08
 using System;
 
 namespace HT_04
@@ -235,6 +235,46 @@ namespace HT_04
             foreach (char symbol in symbols)
             {
                 Console.Write($"{symbol} ");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+
+#endif
+            #endregion
+
+            #region T08
+#if (T08)
+
+            int[,] numbers = new int[3, 5];
+            Random rnd = new Random();
+
+            Console.WriteLine("Original array: ");
+            for (int i = 0, rowSize = numbers.GetLength(0); i < rowSize; i++)
+            {
+                for (int j = 0, colSize = numbers.GetLength(1); j < colSize; j++)
+                {
+                    numbers[i, j] = rnd.Next(0, 100);
+                    Console.Write($"{numbers[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+            int[,] tmp = new int[5, 3];
+            for (int i = 0, rowSize = tmp.GetLength(0); i < rowSize; i++)
+            {
+                for (int j = 0, colSize = tmp.GetLength(1); j < colSize; j++)
+                {
+                    tmp[i, j] = numbers[j, i];
+                }
+            }
+            numbers = tmp;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n\nModified array: ");
+            for (int i = 0, rowSize = numbers.GetLength(0); i < rowSize; i++)
+            {
+                for (int j = 0, colSize = numbers.GetLength(1); j < colSize; j++)
+                {
+                    Console.Write($"{numbers[i, j]}\t");
+                }
+                Console.WriteLine();
             }
             Console.ForegroundColor = ConsoleColor.White;
 
