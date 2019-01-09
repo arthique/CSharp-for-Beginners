@@ -1,4 +1,4 @@
-﻿#define T08
+﻿#define T09
 using System;
 
 namespace HT_04
@@ -277,6 +277,74 @@ namespace HT_04
                 Console.WriteLine();
             }
             Console.ForegroundColor = ConsoleColor.White;
+
+#endif
+            #endregion
+
+            #region T09
+#if (T09)
+
+            int rowSize = 7;
+            int colSize = 5;
+            int[,] numbers = new int[rowSize, colSize];
+            Random rnd = new Random();
+
+            Console.WriteLine("Original array: ");
+            for (int i = 0; i < rowSize; i++)
+            {
+                for (int j = 0; j < colSize; j++)
+                {
+                    numbers[i, j] = rnd.Next(0, 100);
+                    Console.Write($"{numbers[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+            int[,] tmp = new int[rowSize - 1, colSize - 1];
+            int removeRowIndex = rnd.Next(rowSize);
+            int removeColIndex = rnd.Next(colSize);
+            Console.WriteLine($"\nWill remove row {removeRowIndex} and column {removeColIndex}");
+            for (int i = 0; i < rowSize; i++)
+            {
+                for (int j = 0; j < colSize; j++)
+                {
+                    if (i < removeRowIndex)
+                    {
+                        if (j < removeColIndex)
+                        {
+                            tmp[i, j] = numbers[i, j];
+                        }
+                        else if (j > removeColIndex)
+                        {
+                            tmp[i, j - 1] = numbers[i, j];
+                        }
+                    }
+                    else if (i > removeRowIndex)
+                    {
+                        if (j < removeColIndex)
+                        {
+                            tmp[i - 1, j] = numbers[i, j];
+                        }
+                        else if (j > removeColIndex)
+                        {
+                            tmp[i - 1, j - 1] = numbers[i, j];
+                        }
+                    }
+
+                }
+            }
+            numbers = tmp;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n\nModified array: ");
+            for (int i = 0, rSize = numbers.GetLength(0); i < rSize; i++)
+            {
+                for (int j = 0, cSize = numbers.GetLength(1); j < cSize; j++)
+                {
+                    Console.Write($"{numbers[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+
 
 #endif
             #endregion
