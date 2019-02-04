@@ -1,4 +1,4 @@
-﻿#define T09
+﻿#define T10
 using System;
 
 namespace HT_04
@@ -345,6 +345,30 @@ namespace HT_04
             }
             Console.ForegroundColor = ConsoleColor.White;
 
+
+#endif
+            #endregion
+
+            #region T10
+#if (T10)
+
+            int[,] numbers = new int[5, 5];
+            Random rnd = new Random();
+
+            Console.WriteLine("Original array: ");
+            for (int i = 0, rowSize = numbers.GetLength(0); i < rowSize; i++)
+            {
+                for (int j = 0, colSize = numbers.GetLength(1); j < colSize; j++)
+                {
+
+                    numbers[i, j] = rnd.Next(0, 100);
+                    Console.Write($"{numbers[i, j]}\t");
+                    System.Threading.Thread.Sleep(400);
+                }
+                Console.WriteLine();
+            }
+            // TODO Продумать крайние случаи
+            // TODO Найти и выделить общие решения
 
 #endif
             #endregion
