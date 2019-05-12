@@ -1,4 +1,4 @@
-﻿#define T03
+﻿#define T04
 using System;
 
 namespace HT_05
@@ -86,6 +86,24 @@ namespace HT_05
             for (int i = 0; i < size; i += 1)
             {
                 tmpArray[i] = items[i];
+            }
+            return tmpArray;
+        }
+#endif
+        #endregion
+        #region T04
+#if (T04)
+        static int[] ClipCharArray(char[] symbols, int n)
+        {
+            int size = n;
+            if (n > symbols.Length)
+            {
+                size = symbols.Length;
+            }
+            int[] tmpArray = new int[size];
+            for (int i = 0; i < size; i += 1)
+            {
+                tmpArray[i] = (int)symbols[i];
             }
             return tmpArray;
         }
@@ -192,6 +210,37 @@ namespace HT_05
                 Console.WriteLine("Entered value is not a number");
             }
             int[] result = ClipArray(numbers, number);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.Write($"{result[i]} ");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+
+#endif
+            #endregion
+            #region T04
+#if (T04) 
+            const string numberText = "Enter a number: ";
+            int number = 0;
+            int arraySize = 20;
+            char[] symbols = new char[arraySize];
+            Random rnd = new Random();
+            for (int i = 0; i < arraySize; i++)
+            {
+                symbols[i] = (char)rnd.Next(56, 127);
+                Console.Write($"{symbols[i]} ");
+            }
+            Console.Write(numberText);
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
+            }
+            int[] result = ClipCharArray(symbols, number);
             Console.ForegroundColor = ConsoleColor.Yellow;
             for (int i = 0; i < result.Length; i++)
             {
