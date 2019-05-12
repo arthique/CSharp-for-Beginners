@@ -1,10 +1,12 @@
-﻿#define T01A
+﻿#define T03
 using System;
 
 namespace HT_05
 {
     class Program
     {
+        #region T01
+#if (T01)
         static int CalculateDoubleFactorial(int n)
         {
             int s = 1;
@@ -15,6 +17,10 @@ namespace HT_05
             }
             return s;
         }
+#endif
+        #endregion
+        #region T01A
+#if (T01A)
         static int CalculateDoubleFactorialRecursively(int n)
         {
             if (n == 1)
@@ -31,7 +37,60 @@ namespace HT_05
             }
 
         }
+#endif
+        #endregion
+        #region T02
+#if (T02)
+        static int CalculateSquareSumOfNaturalNumbers(int n)
+        {
+            int s = 0;
+            for (int i = 0; i <= n; i += 1)
+            {
+                s += i * i;
+            }
+            return s;
+        }
+#endif
+        #endregion
+        #region T02A
+#if (T02A)
+        static int CalculateRecursiveSquareSumOfNaturalNumbers(int n)
+        {
+            if (n == 0)
+            {
+                return 0;
+            }
+            else if (n == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return n * n + CalculateRecursiveSquareSumOfNaturalNumbers(n - 1);
+            }
+        }
+#endif
+        #endregion
+        #region T03
+#if (T03)
 
+        static int[] ClipArray(int[] items, int n)
+        {
+            int size = n;
+
+            if (n > items.Length)
+            {
+                size = items.Length;
+            }
+            int[] tmpArray = new int[size];
+            for (int i = 0; i < size; i += 1)
+            {
+                tmpArray[i] = items[i];
+            }
+            return tmpArray;
+        }
+#endif
+        #endregion
         static void Main(string[] args)
         {
             #region T01
@@ -71,6 +130,74 @@ namespace HT_05
             }
             int doubleFactorial = CalculateDoubleFactorialRecursively(number);
             Console.Write($" double factorial {number}!! = {doubleFactorial}");
+
+#endif
+            #endregion
+            #region T02
+#if (T02)
+            const string numberText = "Enter a number: ";
+            int number = 0;
+
+            Console.Write(numberText);
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
+            }
+            int squareOfSum = CalculateSquareSumOfNaturalNumbers(number);
+            Console.Write($" Square of sum of number {number} = {squareOfSum}");
+#endif
+            #endregion
+            #region T02A
+#if (T02A)
+            const string numberText = "Enter a number: ";
+            int number = 0;
+
+            Console.Write(numberText);
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
+            }
+            int squareOfSum = CalculateRecursiveSquareSumOfNaturalNumbers(number);
+            Console.Write($" Square of sum of number {number} = {squareOfSum}");
+#endif
+            #endregion
+            #region T03
+#if T03
+            const string numberText = "Enter a number: ";
+            int number = 0;
+            int arraySize = 20;
+            int[] numbers = new int[arraySize];
+            Random rnd = new Random();
+            for (int i = 0; i < arraySize; i++)
+            {
+                numbers[i] = rnd.Next(1, 10);
+                Console.Write($"{numbers[i]} ");
+            }
+
+            Console.Write($"\n{numberText}");
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
+            }
+            int[] result = ClipArray(numbers, number);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.Write($"{result[i]} ");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
 
 #endif
             #endregion
