@@ -1,4 +1,4 @@
-﻿#define T04
+﻿#define T05
 using System;
 
 namespace HT_05
@@ -106,6 +106,19 @@ namespace HT_05
                 tmpArray[i] = (int)symbols[i];
             }
             return tmpArray;
+        }
+#endif
+        #endregion
+        #region T05
+#if (T05)
+        static int CalculateAverage(int[] numbers)
+        {
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i += 1)
+            {
+                sum += numbers[i];
+            }
+            return sum / numbers.Length;
         }
 #endif
         #endregion
@@ -220,7 +233,7 @@ namespace HT_05
 #endif
             #endregion
             #region T04
-#if (T04) 
+#if (T04)
             const string numberText = "Enter a number: ";
             int number = 0;
             int arraySize = 20;
@@ -248,6 +261,34 @@ namespace HT_05
             }
             Console.ForegroundColor = ConsoleColor.White;
 
+#endif
+            #endregion
+            #region T05
+#if (T05)
+            const string numberText = "Enter a number: ";
+            int number = 0;
+
+            Console.Write($"\n{numberText}");
+            try
+            {
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Entered value is not a number");
+            }
+            int[] numbers = new int[number];
+            Random rnd = new Random();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            for (int i = 0; i < number; i++)
+            {
+                numbers[i] = rnd.Next(1, 100);
+                Console.Write($"{numbers[i]} ");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+
+            int result = CalculateAverage(numbers);
+            Console.Write($"Average of numbers = {result} ");
 #endif
             #endregion
         }
