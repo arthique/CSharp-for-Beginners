@@ -1,4 +1,4 @@
-﻿#define T05
+﻿#define T06
 using System;
 
 namespace HT_05
@@ -119,6 +119,30 @@ namespace HT_05
                 sum += numbers[i];
             }
             return sum / numbers.Length;
+        }
+#endif
+        #endregion
+        #region T06
+#if (T06)
+        static int FindMaxValue(int[,] numbers, out int row, out int column)
+        {
+            row = 0;
+            column = 0;
+            int max = numbers[row, column];
+
+            for (int i = 0, rowSize = numbers.GetLength(0); i < rowSize; i++)
+            {
+                for (int j = 0, colSize = numbers.GetLength(1); j < colSize; j++)
+                {
+                    if (numbers[i, j] > max)
+                    {
+                        max = numbers[i, j];
+                        row = i;
+                        column = j;
+                    }
+                }
+            }
+            return max;
         }
 #endif
         #endregion
@@ -289,6 +313,30 @@ namespace HT_05
 
             int result = CalculateAverage(numbers);
             Console.Write($"Average of numbers = {result} ");
+#endif
+            #endregion
+            #region T06
+#if (T06)
+            int[,] numbers = new int[5, 5];
+            Random rnd = new Random();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Numbers: ");
+            for (int i = 0, rowSize = numbers.GetLength(0); i < rowSize; i++)
+            {
+                for (int j = 0, colSize = numbers.GetLength(1); j < colSize; j++)
+                {
+
+                    numbers[i, j] = rnd.Next(0, 100);
+                    Console.Write($"{numbers[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            int row, column;
+            int result = FindMaxValue(numbers, out row, out column);
+            Console.Write($"Max of numbers = {result}, row {row}, column {column}");
+
 #endif
             #endregion
         }
